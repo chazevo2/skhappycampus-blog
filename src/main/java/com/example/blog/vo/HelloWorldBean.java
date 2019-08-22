@@ -6,9 +6,6 @@ import lombok.Data;
 public class HelloWorldBean {
     private String message;
 
-    public HelloWorldBean() {
-    }
-
     public HelloWorldBean(String message) {
         this.message = message;
     }

@@ -1,13 +1,22 @@
 package com.example.blog.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.blog.vo.HelloWorldBean;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWorldController {
-    @RequestMapping(value = "/helloWorld", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello-world", method = RequestMethod.GET)
     public String helloWorld() {
         return "Hello, World!";
+    }
+
+    @GetMapping(value = "/hello-world-bean")
+    public HelloWorldBean helloWorldBean() {
+        return new HelloWorldBean("Hello, World!");
+    }
+
+    @GetMapping(value = "/hello-world/path-variable/{name}")
+    public HelloWorldBean helloWorldBeanPathVariable(@PathVariable("name") String name) {
+        return new HelloWorldBean(String.format("Hello, %s!", name));
     }
 }
