@@ -1,15 +1,16 @@
 package com.example.blog.controller;
 
 import com.example.blog.vo.Member;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @RestController
+@RequestMapping("/blog")
 public class BlogController {
     @RequestMapping(value = "/sayHello", method = RequestMethod.GET)
     public String sayHello() {
@@ -22,7 +23,7 @@ public class BlogController {
         return member;
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @GetMapping(value = "/list")
     public List<Member> list() {
         List<Member> memberList = Arrays.asList(new Member[]{
                 new Member(1, "Junhyuk1, Park", "chazevo2@gmail.com"),
