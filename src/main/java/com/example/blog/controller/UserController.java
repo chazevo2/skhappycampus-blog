@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 public class UserController {
-//    UserService service = new UserService();
     @Autowired
     UserService service;
 
@@ -44,7 +43,7 @@ public class UserController {
     public void deleteUser(@PathVariable("id") int id) {
         User deletedUser = service.deleteById(id);
 
-        if(deletedUser == null) {
+        if (deletedUser == null) {
             throw new UserNotFoundException("id : " + id);
         }
     }
@@ -54,7 +53,7 @@ public class UserController {
         user.setId(id);
         User modifiedUser = service.edit(user);
 
-        if(modifiedUser == null) {
+        if (modifiedUser == null) {
             throw new UserNotFoundException("id : " + id);
         }
         return modifiedUser;
