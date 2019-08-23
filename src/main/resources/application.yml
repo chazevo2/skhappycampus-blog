@@ -3,3 +3,8 @@ server:
 spring:
   messages:
     basename: messages
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    static-path-pattern: /resources/**

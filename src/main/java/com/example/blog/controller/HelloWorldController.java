@@ -12,8 +12,14 @@ public class HelloWorldController {
     private MessageSource messageSource;
 
     @RequestMapping(value = "/hello-world", method = RequestMethod.GET)
-    public String helloWorld() {
-        return "Hello, World!";
+    public String helloWorld(@RequestParam(required = false) String name, @RequestParam(required = false) String email) {
+        if(name == null) {
+            name = "World";
+        }
+        if(email == null) {
+            email = "test@example.com";
+        }
+        return messageSource.getMessage("hello.message", new Object[] {name, email}, LocaleContextHolder.getLocale());
     }
 
     @GetMapping(value = "/hello-world-bean")
