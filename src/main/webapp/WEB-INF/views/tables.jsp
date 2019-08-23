@@ -348,7 +348,7 @@
           <!-- DataTables Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <a href="#" class="btn btn-primary btn-icon-split">
+              <a href="register" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-user-plus"></i>
                     </span>
