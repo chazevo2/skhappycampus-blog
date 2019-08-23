@@ -9,4 +9,9 @@ public class UserController {
     public String main() {
         return "main";
     }
+
+    @GetMapping("/tables")
+    public String tables() {
+        return "tables";
+    }
 }
